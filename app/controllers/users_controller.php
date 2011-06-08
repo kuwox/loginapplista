@@ -11,7 +11,6 @@ class UsersController extends AppController {
 		#verificamos que el usuario exista
 		if(count($user) == 1) {
 			$user = $user[0];
-			$tipo = $user[5];
 			#hacemos el login del joomla
 			#dividiendo el password en la BD en 2 partes a partir del simbolo ':'
 			$parts	= explode( ':', $user['User']['password'] );
@@ -32,10 +31,13 @@ class UsersController extends AppController {
 	}
 	
 	#Ir al index.ctp
-	function index() {
-		$this->set('users', $this->User->find('all'));
+	function index() { 
+		#$this->User->find('all',array('conditions'=>'User.username = username'));
+		#$this->set('users', $this->User->find('first'));
 		#$this->render();
 		#$this->set('users', $this->Thing->findAll('username'));
+      # la lista generada será indexada por Post.id, con valor de Post.title
+      $this->set('users', $this->User->find('list', array('fields'=>'User.name')));		
 	}
 	
 	#Cerrar Sessión
