@@ -1,0 +1,21 @@
+<?php
+class Vm_User_InfosController extends AppController {
+	var $name = 'Vm_User_Infos';
+	var $helpers = array('Html', 'Form');
+	function index() {
+		$this->set('vm_user_infos', $this->User->find('all'));
+		}
+		
+	function add() {
+		if(!empty($this->data)) {
+			$this->Vm_User_Info->create();
+			if ($this->Vm_User_Info->save($this->data)) {
+				$this->Session->setFlash('La Tarea ha sido salvada');
+				$this->redirect(array('action'=>'index'), null, true);
+				} else {
+					$this->Session->setFlash('Tarea no salvada. Prueba de nuevo.');
+					}
+				}
+			}
+	}
+?>

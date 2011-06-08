@@ -1,0 +1,5 @@
+<?php
+class Vm_User_Info extends AppModel {
+	var $name = 'User';
+	}
+?>
