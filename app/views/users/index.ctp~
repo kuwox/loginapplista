@@ -1,38 +1,53 @@
 <h2>Franar C.A.</h2>
 <h3>Lista de Precios</h3>
-<?php if(empty($users)): ?>
-No se pueden mostrar los datos, por favor intente de nuevo
-<?php else: ?>
 <h4>Bienvenido:</h4>
- 
+
 <table>
 <tr>
 <th>Nombre</th>
 <th>Nombre de Usuario</th>
 <th>Correo Electrónico</th>
-<th>Tipo de Usuario</th>
+<th>Tipo de Cliente</th>
 <th>Descargar Lista</th>
 </tr>
-<?php foreach ($users as $user): ?>
-<strong><?php echo $user['User']['usertype'] ?></strong>
+<?php ($session->read('Auth'));
+		$name = ($session->read('Auth'));
+	
+
+?>
 <tr>
 <td>
-<?php echo $user['User']['name'] ?>
+<?php print_r($name['User']['name']) ?>
 </td>
 <td>
-<?php echo $user['User']['username'] ?>
+<?php print_r($name['User']['username']) ?>
 </td>
 <td>
-<?php echo $user['User']['email'] ?>
+<?php print_r($name['User']['email']) ?>
 </td>
 <td>
-<?php echo $user['User']['usertype'] ?>
+<?php print_r($name['User']['usertype']) ?>
 </td>
 <td>
-<!-- acciones en las tareas serán añadidas más tarde -->
+<?php
+	if (($name['User']['usertype']) == "Distribuidor") {
+	echo "<h2></strong><br>Para descargar la Lista de Distribuidor, pulsa: <a href='./dl/LISTAS MAYORISTA  2011 ABR.zip'>Aqui</a></h2>";
+	} else {
+		if (($name['User']['usertype']) == "Super Administrator") {
+	echo "<h4></strong><a href='./dl/LISTAS DISTRIBUIDOR ABR 2011.zip'>Lista de Precios</a></h4>";
+	} else {
+		if ($name == "R") {
+		echo "<h4></strong><a href='./dl/LISTAS REPUESTERO 2011 ABR.zip'>Lista de Precios</a></h4>";		
+	} else {
+		if ($name == "S") {
+		echo "<h2></strong><a href='./dl/LISTAS SICO ABRIL 2011.zip'>Lista de Precios</a></h2>";		
+	}
+	}
+	}
+	}
+	?>
 </td>
 </tr>
-<?php endforeach; ?>
+
 </table>
-<?php endif; ?>
-<a href="/loginapplista/users/logout" class="button" target="_blank">Cerrar Sesión</a>
+<a href="/loginapplista/users/logout" class="button" >Cerrar Sesión</a>

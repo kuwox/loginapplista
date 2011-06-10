@@ -1,4 +1,4 @@
-<h3>Descarga Lista de Precios</h3>
+<h4>Descarga Lista de Precios</h4>
 <?php
 if ($session->check('Message.flash')) {
 		$session->flash();
@@ -9,6 +9,6 @@ if ($session->check('Message.flash')) {
     echo $session->flash('auth');
     echo $form->create('User', array('action' => 'login'));
     echo $form->input('username');
-    echo $form->input('pass', array('type'=>'password'));
-    echo $form->end('Login');
+    echo $form->input('clave', array('type'=>'password'));
+    echo $form->end('Entrar');
 ?>

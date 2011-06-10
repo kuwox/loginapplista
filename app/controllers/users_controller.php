@@ -6,7 +6,7 @@ class UsersController extends AppController {
 		$tipo = null;
 		$user = null;
 	#buscamos un usuario en la BASE de datos a partir de su 'username'
-	if(!empty($this->data) && strlen($this->data['User']['pass'])>6)
+	if(!empty($this->data) && strlen($this->data['User']['clave'])>6)
 		$user = $this->User->findAllByUsername($this->data['User']['username']);
 		#verificamos que el usuario exista
 		if(count($user) == 1) {
@@ -19,7 +19,7 @@ class UsersController extends AppController {
 			#la 2da la cadena salt q se concatena con el password para ecriptar
 			$salt	= @$parts[1];
 			#Joomla ocupa MD5 como mecanismo de encriptacion y cakephp SHA1
-			$passcrypt = md5($this->data['User']['pass'].$salt);
+			$passcrypt = md5($this->data['User']['clave'].$salt);
 			#comparamos el password encriptado con el generado.
 			if ($crypt == $passcrypt) {
 				#CONGRATULATION! ';¬D,
