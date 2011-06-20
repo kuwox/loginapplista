@@ -1,4 +1,3 @@
-<h4>Descarga Lista de Precios</h4>
 <?php
 if ($session->check('Message.flash')) {
 		$session->flash();
@@ -12,3 +11,9 @@ if ($session->check('Message.flash')) {
     echo $form->input('clave', array('type'=>'password'));
     echo $form->end('Entrar');
 ?>
+</br>
+			<a href="/index.php/component/user/reset.html">¿Has perdido la contraseña?</a>
+</br></br>
+			<a href="/index.php/component/user/remind.html">¿Has olvidado tu nombre de usuario?</a>
+</br></br>
+				<p>¿Sin cuenta aún?</p><a href="/index.php/inicio.html?page=shop.registration">Registrate</a>
