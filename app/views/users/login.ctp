@@ -12,8 +12,8 @@ if ($session->check('Message.flash')) {
     echo $form->end('Entrar');
 ?>
 </br>
-			<a href="/index.php/component/user/reset.html">¿Has perdido la contraseña?</a>
+			<a href="/index.php/component/user/reset.html" target="_blank">¿Has perdido la contraseña?</a>
 </br></br>
-			<a href="/index.php/component/user/remind.html">¿Has olvidado tu nombre de usuario?</a>
+			<a href="/index.php/component/user/remind.html" target="_blank">¿Has olvidado tu nombre de usuario?</a>
 </br></br>
-				<p>¿Sin cuenta aún?</p><a href="/index.php/inicio.html?page=shop.registration">Registrate</a>
+				<p>¿Sin cuenta aún?</p><a href="/index.php/inicio.html?page=shop.registration" target="_blank">Registrate</a>
