@@ -16,4 +16,4 @@ if ($session->check('Message.flash')) {
 </br></br>
 			<a href="/index.php/component/user/remind.html" target="_blank">¿Has olvidado tu nombre de usuario?</a>
 </br></br>
-				<p>¿Sin cuenta aún?</p><a href="/index.php/inicio.html?page=shop.registration" target="_blank">Registrate</a>
+				<p>¿Sin cuenta aún?</p><a href="/index.php?option=com_virtuemart&page=shop.registration&Itemid=80" target="_blank">Registrate</a>
