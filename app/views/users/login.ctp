@@ -7,7 +7,7 @@ if ($session->check('Message.flash')) {
 	}
     echo $session->flash('auth');
     echo $form->create('User', array('action' => 'login'));
-    echo $form->input('username');
+    echo $form->input('username', array('label'=> 'Usuario'));
     echo $form->input('clave', array('type'=>'password'));
     echo $form->end('Entrar');
 ?>
